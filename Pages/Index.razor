@@ -41,7 +41,7 @@
 
 <nav>
     <div class="commands">
-        <button>Add block</button>
+        <button @onclick="state.AddBlock">Add block</button>
     </div>
 
     <label>
@@ -54,7 +54,11 @@
     {
         <RAF UpdateState="OnUpdate">
             <svg viewBox="0 0 @(state.Width) @(state.Height)" width="@(state.Width)px" height="@(state.Height)px">
-                <rect x="0" y="0" width="@state.Width" height="@state.Height" fill="rgb(200,200,255)" />
+                @foreach (var block in state.Blocks)
+                {
+                    <rect x="@block.X" y="@block.Y" width="@block.Width" height="@block.Height" fill="rgb(200,200,255)" />
+                    <text><text x="@(block.X+44)" y="@(block.Y+56)" font-size="24">@block.Number</text></text>
+                }
             </svg>
         </RAF>
     }
