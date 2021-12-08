@@ -39,14 +39,22 @@
     }
 }
 
+<nav>
+    <div class="commands">
+        <button>Add block</button>
+    </div>
+
+    <label>
+        <input type="checkbox"> Snap to grid
+    </label>
+</nav>
+
 <main @ref="mainElement">
     @if (viewportReady)
     {
         <RAF UpdateState="OnUpdate">
-            <svg viewBox="0 0 @(state.Width) @(state.Height)" width="@(state.Width)px" height="@(state.Height)px" stroke="black" fill="white">
-                <text x="0" y="20" font-size="20" fill="black" stroke="transparent">@(state.Width) x @(state.Height)</text>
-                <text x="0" y="@(state.Height-10)" font-size="20" fill="black" stroke="transparent">@(state.Width) x @(state.Height)</text>
-                <rect x="@(state.Width / 4)" y="@(state.Height / 4)" width="@(state.Width / 2)" height="@(state.Height / 2)" fill="@(state.Fill)" shape-rendering="crispEdges" />
+            <svg viewBox="0 0 @(state.Width) @(state.Height)" width="@(state.Width)px" height="@(state.Height)px">
+                <rect x="0" y="0" width="@state.Width" height="@state.Height" fill="rgb(200,200,255)" />
             </svg>
         </RAF>
     }
