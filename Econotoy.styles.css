@@ -1,5 +1,46 @@
 /* /Pages/Index.razor.rz.scp.css */
-main[b-l99li83zrc] {
-    width: 100%;
-    height: 100%;
+nav[b-l99li83zrc] {
+    height: 60px;
+    background-image: url("nav.png");
+    background-repeat: repeat-x;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+nav label[b-l99li83zrc], nav button[b-l99li83zrc] {
+    height: 42px;
+    margin: 6px;
+}
+
+nav > label[b-l99li83zrc] {
+
+    display: flex;
+    align-items: center;
+}
+
+.commands[b-l99li83zrc] {
+    flex: 1;
+}
+
+button[b-l99li83zrc] {
+    color: white;
+    background: black;
+    border: 3px solid white;
+    border-radius: 6px;
+}
+
+button:hover[b-l99li83zrc] {
+    background: #333;
+}
+
+button:active[b-l99li83zrc] {
+    background: #666;
+}
+
+input[type=checkbox][b-l99li83zrc] {
+    margin: 6px;
+    width: 24px;
+    height: 30px;
 }
