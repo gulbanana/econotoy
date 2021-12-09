@@ -16,8 +16,7 @@ public class Game
         {
             Blocks[drag.Value.Dragged] = Blocks[drag.Value.Dragged] with
             {
-                X = drag.Value.Last.X,
-                Y = drag.Value.Last.Y
+                Location = drag.Value.Last
             };
         }
 
@@ -47,8 +46,7 @@ public class Game
                 {
                     Blocks[i] = block with 
                     { 
-                        X = block.X + (int)(block.Velocity.X * elapsed.TotalSeconds), 
-                        Y = block.Y + (int)(block.Velocity.Y * elapsed.TotalSeconds), 
+                        Location = block.Location + block.Velocity * elapsed.TotalSeconds,
                         Velocity = Point.Zero
                     };
                 }
@@ -58,7 +56,7 @@ public class Game
 
     public void AddBlock()
     {
-        Blocks.Add(new Block(Width/2, Height/2, 100, 100, blockIX++));
+        Blocks.Add(new Block(new Point(Width/2, Height/2), 100, 100, blockIX++));
     }
 
     public void DragStart(Point cursor)
@@ -109,33 +107,34 @@ public class Game
                (Math.Abs(a.Y - b.Y) * 2 < (a.Height + b.Height));
     }
 
+    private const double pushSpeed = 200.0;
     private void Collide(Block a, Block b)
     {
-        var ax = 0;
-        var ay = 0;
-        var bx = 0;
-        var by = 0;
+        var ax = 0.0;
+        var ay = 0.0;
+        var bx = 0.0;
+        var by = 0.0;
 
         if (a.X <= b.X)
         {
-            ax = -200;
-            bx = 200;
+            ax = -pushSpeed;
+            bx = pushSpeed;
         }
         else
         {
-            ax = 200;
-            bx = -200;
+            ax = pushSpeed;
+            bx = -pushSpeed;
         }
 
         if (a.Y <= b.Y)
         {
-            ay = -200;
-            by = 200;
+            ay = -pushSpeed;
+            by = pushSpeed;
         }
         else
         {
-            ay = 200;
-            by = -200;
+            ay = pushSpeed;
+            by = -pushSpeed;
         }
 
         a.Velocity += new Point(ax, ay);
