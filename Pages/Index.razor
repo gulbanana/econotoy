@@ -2,9 +2,11 @@
 @implements IAsyncDisposable
 @inject IJSRuntime JS
 @code {
-    private readonly State state = new();
+    private readonly Game state = new();
     private IJSObjectReference? module;
     private ElementReference mainElement;
+    private double mainLeft;
+    private double mainTop;
     private bool viewportReady;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -25,8 +27,10 @@
     }
 
     [JSInvokable]
-    public void SetDimensions(int width, int height)
+    public void SetDimensions(double left, double top, int width, int height)
     {
+        mainLeft = left;
+        mainTop = top;
         state.Width = width;
         state.Height = height;
         viewportReady = true;
@@ -36,6 +40,21 @@
     private void OnUpdate(TimeSpan elapsed)
     {
         state.Tick(elapsed);
+    }
+
+    private void DragStart(MouseEventArgs e)
+    {
+        state.DragStart(new(e.ClientX - mainLeft, e.ClientY - mainTop));
+    }
+
+    private void DragUpdate(MouseEventArgs e)
+    {
+        state.DragUpdate(new(e.ClientX - mainLeft, e.ClientY - mainTop));
+    }
+
+    private void DragEnd(MouseEventArgs e)
+    {
+        state.DragEnd(new(e.ClientX - mainLeft, e.ClientY - mainTop));
     }
 }
 
@@ -49,7 +68,7 @@
     </label>
 </nav>
 
-<main @ref="mainElement">
+<main @ref="mainElement" @onmousedown="DragStart" @onmousemove="DragUpdate" @onmouseup="DragEnd">
     @if (viewportReady)
     {
         <RAF UpdateState="OnUpdate">
