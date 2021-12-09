@@ -110,34 +110,15 @@ public class Game
     private const double pushSpeed = 200.0;
     private void Collide(Block a, Block b)
     {
-        var ax = 0.0;
-        var ay = 0.0;
-        var bx = 0.0;
-        var by = 0.0;
-
-        if (a.X <= b.X)
+        var diff = b.Location - a.Location;
+        if (diff.Equals(Point.Zero))
         {
-            ax = -pushSpeed;
-            bx = pushSpeed;
-        }
-        else
-        {
-            ax = pushSpeed;
-            bx = -pushSpeed;
+            diff = new Point(1, 1);
         }
 
-        if (a.Y <= b.Y)
-        {
-            ay = -pushSpeed;
-            by = pushSpeed;
-        }
-        else
-        {
-            ay = pushSpeed;
-            by = -pushSpeed;
-        }
-
-        a.Velocity += new Point(ax, ay);
-        b.Velocity += new Point(bx, by);
+        var normalised = diff / diff.Length * pushSpeed;
+        
+        a.Velocity -= normalised;
+        b.Velocity += normalised;
     }
 }
