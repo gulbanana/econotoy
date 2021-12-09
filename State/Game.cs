@@ -16,7 +16,7 @@ public class Game
         {
             Blocks[drag.Value.Dragged] = Blocks[drag.Value.Dragged] with
             {
-                Location = drag.Value.Last
+                Location = drag.Value.Last - drag.Value.Offset
             };
         }
 
@@ -73,7 +73,7 @@ public class Game
             {
                 Blocks.RemoveAt(i);
                 Blocks.Add(block);
-                drag = new Drag(Blocks.Count-1, cursor);
+                drag = new Drag(Blocks.Count-1, cursor - block.Location, cursor);
                 return;
             }
         }
