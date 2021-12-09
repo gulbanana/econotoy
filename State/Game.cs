@@ -37,15 +37,20 @@ public class Game
         for (var i = 0; i < Blocks.Count; i++)
         {
             var block = Blocks[i];
-            if (block.XVelocity != 0)
+            if (block.Velocity.X != 0 || block.Velocity.Y != 0)
             {
                 if (drag.HasValue && drag.Value.Dragged == i)
                 {
-                    Blocks[i] = block with { XVelocity = 0 };
+                    Blocks[i] = block with { Velocity = Point.Zero };
                 }
                 else
                 {
-                    Blocks[i] = block with { X = block.X + block.XVelocity, XVelocity = 0 };
+                    Blocks[i] = block with 
+                    { 
+                        X = block.X + (int)(block.Velocity.X * elapsed.TotalSeconds), 
+                        Y = block.Y + (int)(block.Velocity.Y * elapsed.TotalSeconds), 
+                        Velocity = Point.Zero
+                    };
                 }
             }
         }
@@ -106,15 +111,34 @@ public class Game
 
     private void Collide(Block a, Block b)
     {
-        if (a.X <= b.X) // a is left
+        var ax = 0;
+        var ay = 0;
+        var bx = 0;
+        var by = 0;
+
+        if (a.X <= b.X)
         {
-            a.XVelocity-=2;
-            b.XVelocity+=2;
+            ax = -200;
+            bx = 200;
         }
         else
         {
-            a.XVelocity+=2;
-            b.XVelocity-=2;
+            ax = 200;
+            bx = -200;
         }
+
+        if (a.Y <= b.Y)
+        {
+            ay = -200;
+            by = 200;
+        }
+        else
+        {
+            ay = 200;
+            by = -200;
+        }
+
+        a.Velocity += new Point(ax, ay);
+        b.Velocity += new Point(bx, by);
     }
 }

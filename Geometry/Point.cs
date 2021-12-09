@@ -4,6 +4,8 @@ namespace Econotoy.Geometry;
 
 public struct Point
 {
+    public static Point Zero = new(0, 0);
+    
     public int X;
     public int Y;
 
@@ -25,5 +27,10 @@ public struct Point
                Y >= block.Y && 
                X <= (block.X + block.Width) &&
                Y <= (block.Y + block.Height);
+    }
+
+    public static Point operator +(Point a, Point b)
+    {
+        return new Point(a.X+b.X, a.Y+b.Y);
     }
 }
