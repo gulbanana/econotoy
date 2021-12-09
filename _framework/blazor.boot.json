@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Econotoy.dll": "sha256-Ybw1XJHnczxcaW68BST5osbGrTzGbTwLzxOx1VCv3eY=",
+      "Econotoy.dll": "sha256-q+YVzsYQact\/9IhDTV+B2IuPAUFLR2pEFRSEWFzaT8Y=",
       "Microsoft.AspNetCore.Components.dll": "sha256-d+N2umEFCPNltBnU4wY8FRI1aQJnxPIjdieaUnV8XEs=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-lc+zkJTmDUCGZzmpG1SrqhJcCQig63mXtKz5RlCgVE0=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
