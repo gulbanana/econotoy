@@ -10,7 +10,7 @@
     {
         if (firstRender)
         {
-            module = await JS.InvokeAsync<IJSInProcessObjectReference>("import", "./Shared/RAF.razor.js");
+            module = await JS.InvokeAsync<IJSInProcessObjectReference>("import", "./Components/RAF.razor.js");
             module.InvokeVoid("start", DotNetObjectReference.Create(this));
         }
     }
