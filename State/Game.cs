@@ -65,9 +65,12 @@ public class Game
 
         for (var i = Blocks.Count-1; i >= 0; i--)
         {
-            if (cursor.Within(Blocks[i]))
+            var block = Blocks[i];
+            if (cursor.Within(block))
             {
-                drag = new Drag(i, cursor);
+                Blocks.RemoveAt(i);
+                Blocks.Add(block);
+                drag = new Drag(Blocks.Count-1, cursor);
                 return;
             }
         }

@@ -75,7 +75,7 @@
             <svg viewBox="0 0 @(state.Width) @(state.Height)" width="@(state.Width)px" height="@(state.Height)px">
                 @foreach (var block in state.Blocks)
                 {
-                    <rect x="@block.X" y="@block.Y" width="@block.Width" height="@block.Height" fill="rgb(200,200,255)" />
+                    <rect x="@block.X" y="@block.Y" width="@block.Width" height="@block.Height" fill="rgb(200,200,255)" stroke-width="2" stroke="black" />
                     <text><text x="@(block.X+44)" y="@(block.Y+56)" font-size="24">@block.Number</text></text>
                 }
             </svg>
