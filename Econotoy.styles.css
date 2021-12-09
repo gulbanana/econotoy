@@ -44,3 +44,7 @@ input[type=checkbox][b-l99li83zrc] {
     width: 24px;
     height: 30px;
 }
+
+svg text[b-l99li83zrc] {
+    user-select: none;
+}

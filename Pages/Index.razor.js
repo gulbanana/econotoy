@@ -2,7 +2,8 @@ let element = null;
 let component = null;
 
 function notify() {
-    component.invokeMethodAsync("SetDimensions", element.clientWidth, element.clientHeight);
+    let bounds = element.getBoundingClientRect();
+    component.invokeMethodAsync("SetDimensions", bounds.left, bounds.top, element.clientWidth, element.clientHeight);
 }
 
 export function subscribe(measureElement, notifyObject) {

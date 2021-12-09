@@ -7,9 +7,9 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Econotoy.dll": "sha256-XbChOgrltKbyDu\/TFYF7ePjj98lT1sZOYiabuEvr3VY=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-2DgRAs0f3wHf9o8mJJPD7\/6QV7rcyGEKslyulbsiLfI=",
-      "Microsoft.AspNetCore.Components.Web.dll": "sha256-03tPHPLltVMpajn385JsGgoMHJ6OaFd9h1TdzU8e940=",
+      "Econotoy.dll": "sha256-Ybw1XJHnczxcaW68BST5osbGrTzGbTwLzxOx1VCv3eY=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-d+N2umEFCPNltBnU4wY8FRI1aQJnxPIjdieaUnV8XEs=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-lc+zkJTmDUCGZzmpG1SrqhJcCQig63mXtKz5RlCgVE0=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-zhFtW4kE16TdrpPne9I1Cu9o0KYzrS50VE9MVSifJg4=",
       "Microsoft.Extensions.Configuration.dll": "sha256-QPR+1IXNcA28b\/gXw3uZ8aRigHIZUJ1KWSH02kkCg7Q=",
@@ -28,11 +28,11 @@
       "System.Memory.dll": "sha256-XrXCAt6tvesm6iBCu0ZDSvOvAqTTVOPfrWj\/byw+5Eo=",
       "System.Net.Http.dll": "sha256-UbR9XTWAmR\/GYmdHZC1rcbk+dJKsfjgUUbPspPAKtao=",
       "System.Net.Primitives.dll": "sha256-giY7NhdWyziWlVmbqg8CnTt2UVtnJPdkZUnB0RJX6rM=",
-      "System.Private.CoreLib.dll": "sha256-DOaJI2adWvHolYA6Nq3xzlPWuwCKmT6V0D3pnP+MW70=",
+      "System.Private.CoreLib.dll": "sha256-OnnUCWHin1PHPKg4oNimZd1XOcMdrjO72yHKd6ZCWWc=",
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-EPgGtdoqNL9i59MC3bQOi6EVTT4OSdOmq0nEpW8B9B8=",
       "System.Private.Uri.dll": "sha256-QgVDhmfC3TPoKbzUrLLNszOjqA0Sm4NDNWQKUktqEHo=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-lWLrP2SkeEtjbEdvnCokKxYOu+LNxC\/N+o9fErOPhWw=",
-      "System.Runtime.dll": "sha256-Mc6pJYLelAovqm0LzRGtPpRWZi6G2\/HtywaFok+UH\/4=",
+      "System.Runtime.dll": "sha256-Iwr5ZD7OxfH4RoGg+u6Nu8szGjxphIgCIOaGMBog5oU=",
       "System.Text.Encodings.Web.dll": "sha256-2si5LS8tRWuGqAH2WpDDgr3HLVXlthSj8Zuj8tdONAI=",
       "System.Text.Json.dll": "sha256-SaaNpNuS7Fv+ohRcbU9Cm1AcdXMVOs8F+IWglTfBcjQ="
     },
